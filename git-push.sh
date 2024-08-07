@@ -10,6 +10,7 @@ if [ "$commit_info" != "q" ]; then
     git add ./package.json
     git add ./run.sh
     git add ./git-push.sh
+    git add ./run-mycard-ygopro.sh
     git commit -m "$commit_info"
     git push
 fi
