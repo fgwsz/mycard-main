@@ -16,11 +16,11 @@ sudo npm install -g cnpm --registry=https://registry.npmmirror.com
 # download mycard v3
 mycard_download_url="https://code.mycard.moe/mycard/mycard/-/archive/v3/mycard-v3.tar.gz"
 mycard_path="$root_path/mycard-v3.tar.gz"
-if [ ! -d "$mycard_path" ]; then
+if [ ! -e "$mycard_path" ]; then
     curl -C - -o "$mycard_path" "$mycard_download_url"
 fi
 mycard_dir_path="$root_path/mycard"
-if [ ! -d "$mycard_dir_path" ]; then
+if [ ! -e "$mycard_dir_path" ]; then
     mkdir -p "$mycard_dir_path"
 fi
 tar -zxvf "$mycard_path" -C "$mycard_dir_path/"
