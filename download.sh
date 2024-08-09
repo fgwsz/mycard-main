@@ -9,5 +9,8 @@ if [ ! -e "$mycard_path" ]; then
         if [ $? -eq 0 ]; then
             break
         fi
+        if [[ -e "$mycard_path" ]]; then
+            rm -rf "$mycard_path"
+        fi
     done
 fi
