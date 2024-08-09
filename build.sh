@@ -7,7 +7,7 @@ if [ ! -e "$mycard_file_path" ]; then
 fi
 mycard_root_path="$root_path/mycard"
 if [ ! -e "$mycard_root_path" ]; then
-    mkdir -p "$mycard_root_path"
+    mkdir "$mycard_root_path"
     tar -zxvf "$mycard_file_path" -C "$mycard_root_path/"
 fi
 mycard_dir_path="$mycard_root_path/mycard-v3"
