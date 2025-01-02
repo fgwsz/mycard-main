@@ -2,6 +2,7 @@
 
 root_path=$(dirname "$(readlink -f "$0")")
 mycard_download_url="https://code.moenext.com/mycard/mycard/-/archive/v3.0.71/mycard-v3.0.71.tar.gz"
+mycard_filename="mycard-v3.0.71.tar.gz"
 mycard_path="$root_path/mycard-v3.0.71.tar.gz"
 mycard_remote_size=$(curl -sI "$mycard_download_url" | grep -i Content-Length | awk '{print $2}' | tr -d '\r')
 download_flag=false
@@ -29,10 +30,6 @@ if [ $download_flag = true ]; then
     if [[ -e "$mycard_path" ]]; then
         rm -rf "$mycard_path"
     fi
-    while true; do
-        curl --http1.1 -L -C - --retry 999 --retry-delay 2 -o "$mycard_path" "$mycard_download_url"
-        if [ $? -eq 0 ]; then
-            break
-        fi
-    done
+    cd "$root_path"
+    wget -t -O "$mycard_filename" "$mycard_download_url"
 fi
