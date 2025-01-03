@@ -2,8 +2,7 @@
 
 root_path=$(dirname "$(readlink -f "$0")")
 mycard_download_url="https://code.moenext.com/mycard/mycard/-/archive/v3.0.71/mycard-v3.0.71.tar.gz"
-mycard_filename="mycard-v3.0.71.tar.gz"
-mycard_path="$root_path/$mycard_filename"
+mycard_path="$root_path/mycard-v3.0.71.tar.gz"
 mycard_remote_size=$(curl -sI "$mycard_download_url" | grep -i Content-Length | awk '{print $2}' | tr -d '\r')
 download_flag=false
 #check remote mycard size
@@ -33,12 +32,11 @@ while true; do
 done
 #download & update mycard
 if [ $download_flag = true ]; then
-    cd "$root_path"
     while true; do
         if [[ -e "$mycard_path" ]]; then
             rm -rf "$mycard_path"
         fi
-        axel -o "$mycard_filename" "$mycard_download_url"
+        axel -o "$mycard_path" "$mycard_download_url"
         if [ $? -eq 0 ]; then
             break
         fi
