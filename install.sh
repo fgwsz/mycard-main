@@ -2,7 +2,7 @@
 
 sudo apt update
 sudo apt install curl
-sudo apt install wget
+sudo apt install axel
 sudo apt -y install python3 build-essential git
 sudo apt-get install libssl-dev
 curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
