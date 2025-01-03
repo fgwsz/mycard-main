@@ -26,9 +26,14 @@ else
 fi
 #download & update mycard
 if [ $download_flag = true ]; then
-    if [[ -e "$mycard_path" ]]; then
-        rm -rf "$mycard_path"
-    fi
     cd "$root_path"
-    wget -t inf "$mycard_download_url"
+    while true; do
+        if [[ -e "$mycard_path" ]]; then
+            rm -rf "$mycard_path"
+        fi
+        wget "$mycard_download_url" -t 2
+        if [ $? -eq 0 ]; then
+            break
+        fi
+    done
 fi
