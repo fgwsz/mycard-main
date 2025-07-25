@@ -1,6 +1,6 @@
 {
   "name": "mycard",
-  "version": "3.0.72",
+  "version": "3.0.73",
   "description": "moecube",
   "keywords": [],
   "author": "zh99998 <zh99998@gmail.com>",
@@ -83,7 +83,6 @@
     "@types/node": "^14.0.1",
     "@types/tether": "latest",
     "@types/typeahead": "latest",
-    "electron": "^4.2.12",
     "electron-builder": "^23.1.0",
     "electron-builder-notarize": "^1.5.2",
     "rollup": "latest",

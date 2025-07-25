@@ -1,7 +1,7 @@
 #!/bin/bash
 
 root_path=$(dirname "$(readlink -f "$0")")
-mycard_download_url="https://code.moenext.com/mycard/mycard/-/archive/v3.0.72/mycard-v3.0.72.tar.gz"
+mycard_download_url="https://code.moenext.com/mycard/mycard/-/archive/v3.0.73/mycard-v3.0.73.tar.gz"
 mycard_path="$root_path/mycard.tar.gz"
 mycard_remote_size=$(curl -sIL "$mycard_download_url" | grep -i "Content-Length" | tail -1 | awk '{print $2}' | tr -d '\r')
 download_flag=false

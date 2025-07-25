@@ -10,3 +10,4 @@ sudo apt install -y nodejs
 sudo apt-get install nodejs
 sudo npm config set registry https://registry.npmmirror.com
 sudo npm install -g cnpm --registry=https://registry.npmmirror.com
+sudo npm install -g typescript
