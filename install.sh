@@ -1,5 +1,8 @@
 #!/bin/bash
 
+#maybe
+#grep,sed
+#lib
 sudo apt update
 sudo apt install curl
 sudo apt install axel

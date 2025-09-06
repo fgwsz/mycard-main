@@ -7,7 +7,6 @@ if [ "$commit_info" != "q" ]; then
     git add ./install.sh
     git add ./download.sh
     git add ./build.sh
-    git add ./package.json
     git add ./run.sh
     git add ./run-ygopro.sh
     git add ./README.md
